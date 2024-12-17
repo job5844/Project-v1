@@ -1,10 +1,10 @@
-<!-- src/views/ProductManager.vue -->
 <template>
     <div class="product-manager">
       <div class="header">
         <h2>จัดการสินค้า</h2>
         <button class="btn-add" @click="openAddModal">เพิ่มสินค้า</button>
       </div>
+      
   
       <table class="product-table">
         <thead>

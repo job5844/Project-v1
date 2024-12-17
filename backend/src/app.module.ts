@@ -5,6 +5,11 @@ import { AppService } from './app.service';
 import { AuthModule } from './Auth/auth.module';
 import { User } from './User/user.entity';
 import { Role } from './User/role.entity';
+import { Product } from './User/product/product.entity';
+import { Category } from './User/product/category.entity';
+import { CategoriesModule } from './categories/categories.module';
+import { ProductsModule } from './products/products.module';
+
 
 @Module({
   imports: [
@@ -15,11 +20,13 @@ import { Role } from './User/role.entity';
       username: 'postgres',
       password: 'password',
       database: 'auth_db',
-      entities: [User, Role],
+      entities: [User, Role, Product, Category ],
       synchronize: true,
       autoLoadEntities: true,
     }),
-    AuthModule
+    AuthModule,
+    CategoriesModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
